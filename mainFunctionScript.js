@@ -1,6 +1,6 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : June 12,2019
+* Date       : June 15,2019
 * File       : mainFunctionScript.js
 * Purpose    : Create GUI and rotation function
 */
@@ -52,7 +52,7 @@ function initializeFunction() {
 	 document.getElementById("demo1").innerHTML = "Successful matrix initilization";
                                }
 
-// rotation around Axis X, Y, Z
+  // rotation around Axis X, Y, Z
 function rotationFunction() { 
  //Read data
  var axisVar = $( "#axisRotation" ).val();       //name of axis
@@ -60,26 +60,27 @@ function rotationFunction() {
  var numStepRot = parseInt($( "#stepRotation" ).val());    // number step of rotation
  var cellLocation = parseInt($( "#cellRotation" ).val());  // location to rotate
 
-// rotation around X-axis
+   // rotation around X-axis
 if ( axisVar == "x" ) {
 	matrixXaxisRotationFunction(cellLocation, numStepRot, matrixDimension,  rightsideArr, bottomArr, leftsideArr, topArr);
 	cellColorXaxisRotationFunction(cL, cellLocation, matrixDimension, rightsideArr, bottomArr, leftsideArr, topArr, colorFace);	
 	
 }
-// rotation around Y-axis
+   // rotation around Y-axis
 if ( axisVar == "y" ) { 
-// rotate matrix around Z axis for selected cell in the middle not edge
-matrixYaxisRotationFunction(cellLocation, numStepRot, matrixDimension, topArr, frontArr, bottomArr, backArr);
-cellColorYaxisRotationFunction(cL, cellLocation, matrixDimension, topArr, frontArr, bottomArr, backArr, colorFace);	
+  // rotate matrix around Z axis for selected cell in the middle not edge
+    matrixYaxisRotationFunction(cellLocation, numStepRot, matrixDimension, topArr, frontArr, bottomArr, backArr);
+    cellColorYaxisRotationFunction(cL, cellLocation, matrixDimension, topArr, frontArr, bottomArr, backArr, colorFace);	
 
 } 
 
-// rotation around Z-axis
+    // rotation around Z-axis
 if ( axisVar == "z" ) {
-// rotate matrix around Z axis for selected cell in the middle not edge
-matrixZaxisRotationFunction(cellLocation, numStepRot, matrixDimension, backArr, rightsideArr, frontArr, leftsideArr);
-// rotate cell color around Z axis for selected cell in the middle not edge
-cellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, backArr, rightsideArr,frontArr, leftsideArr, colorFace);	
+   // rotate matrix around Z axis for selected cell in the middle not edge
+   matrixZaxisRotationFunction(cellLocation, numStepRot, matrixDimension, backArr, rightsideArr, frontArr, leftsideArr);
+   // rotate cell color around Z axis for selected cell in the middle not edge
+   cellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, backArr, rightsideArr,frontArr, leftsideArr, colorFace);	
+
                     }
                              }
 

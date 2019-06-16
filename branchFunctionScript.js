@@ -1,6 +1,6 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : June 12, 2019
+* Date       : June 15, 2019
 * File       : branchFunctionScript.js
 * Purpose    : contain all functions that used by main function
 */
@@ -94,8 +94,6 @@ function matrixXaxisRotationFunction(cellLocation, numStepRot, matrixDimension, 
 	topArr[(matrixDimension*matrixDimension-1)-(j+matrixDimension*(cellLocation-1))] = temp;
 	
 	//console.log(i);
-	
-	
 
 	 j = j + 1;
 	 
@@ -220,5 +218,9 @@ function cellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, backA
                                             }              										
                          }
 						         }
+								 
+
+								 
+								 
 						
 
