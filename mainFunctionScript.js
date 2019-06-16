@@ -1,6 +1,6 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : June 15,2019
+* Date       : June 16,2019
 * File       : mainFunctionScript.js
 * Purpose    : Create GUI and rotation function
 */
@@ -56,7 +56,7 @@ function initializeFunction() {
 function rotationFunction() { 
  //Read data
  var axisVar = $( "#axisRotation" ).val();       //name of axis
- var directionRot = $( "#typeRotation" ).val(); // direction of rotation here
+ var directionRot = $( "#typeRotation" ).val(); // direction of rotation
  var numStepRot = parseInt($( "#stepRotation" ).val());    // number step of rotation
  var cellLocation = parseInt($( "#cellRotation" ).val());  // location to rotate
 
@@ -78,9 +78,14 @@ if ( axisVar == "y" ) {
 if ( axisVar == "z" ) {
    // rotate matrix around Z axis for selected cell in the middle not edge
    matrixZaxisRotationFunction(cellLocation, numStepRot, matrixDimension, backArr, rightsideArr, frontArr, leftsideArr);
+   // rotate top matrix edges 
+   if (cellLocation == 1) {
+	topMatrixZaxisRotationFunction(numStepRot, matrixDimension, topArr);
+	topCellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, topArr, colorFace);
+} 
    // rotate cell color around Z axis for selected cell in the middle not edge
-   cellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, backArr, rightsideArr,frontArr, leftsideArr, colorFace);	
-
+   cellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, backArr, rightsideArr,frontArr, leftsideArr, colorFace);
+  
                     }
                              }
 
