@@ -1,6 +1,6 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : June 16,2019
+* Date       : June 17, 2019
 * File       : mainFunctionScript.js
 * Purpose    : Create GUI and rotation function
 */
@@ -64,12 +64,35 @@ function rotationFunction() {
 if ( axisVar == "x" ) {
 	matrixXaxisRotationFunction(cellLocation, numStepRot, matrixDimension,  rightsideArr, bottomArr, leftsideArr, topArr);
 	cellColorXaxisRotationFunction(cL, cellLocation, matrixDimension, rightsideArr, bottomArr, leftsideArr, topArr, colorFace);	
-	
+	/////////////////
+		// rotate front matrix edges 
+   if (cellLocation == 1) {
+	frontMatrixXaxisRotationFunction(numStepRot, matrixDimension, frontArr);	
+	frontCellColorXaxisRotationFunction(cL, cellLocation, matrixDimension, frontArr, colorFace);
+	}
+   if (cellLocation == matrixDimension) {
+    backMatrixXaxisRotationFunction(numStepRot, matrixDimension, backArr);
+	backCellColorXaxisRotationFunction(cL, cellLocation, matrixDimension, backArr, colorFace);
+	} 
+	/////////////////
 }
    // rotation around Y-axis
 if ( axisVar == "y" ) { 
   // rotate matrix around Z axis for selected cell in the middle not edge
     matrixYaxisRotationFunction(cellLocation, numStepRot, matrixDimension, topArr, frontArr, bottomArr, backArr);
+	//////////////////////////////
+	// rotate rightside matrix edges 
+   if (cellLocation == 1) {
+	rightsideMatrixYaxisRotationFunction(numStepRot, matrixDimension, rightsideArr);	
+	rightsideCellColorYaxisRotationFunction(cL, cellLocation, matrixDimension, rightsideArr, colorFace);
+	}
+	// rotate leftside matrix edges 
+   if (cellLocation == matrixDimension) {
+    leftsideMatrixYaxisRotationFunction(numStepRot, matrixDimension, leftsideArr);
+	leftsideCellColorYaxisRotationFunction(cL, cellLocation, matrixDimension, leftsideArr, colorFace);
+	} 
+
+	//////////////////////////////
     cellColorYaxisRotationFunction(cL, cellLocation, matrixDimension, topArr, frontArr, bottomArr, backArr, colorFace);	
 
 } 
@@ -81,8 +104,11 @@ if ( axisVar == "z" ) {
    // rotate top matrix edges 
    if (cellLocation == 1) {
 	topMatrixZaxisRotationFunction(numStepRot, matrixDimension, topArr);
-	topCellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, topArr, colorFace);
-} 
+	topCellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, topArr, colorFace);} 
+	if (cellLocation == matrixDimension) {
+	bottomMatrixZaxisRotationFunction(numStepRot, matrixDimension, bottomArr);	
+	bottomCellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, bottomArr, colorFace);
+	}
    // rotate cell color around Z axis for selected cell in the middle not edge
    cellColorZaxisRotationFunction(cL, cellLocation, matrixDimension, backArr, rightsideArr,frontArr, leftsideArr, colorFace);
   
